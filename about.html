@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== Meta & Title ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="About KidneyCare AI – Learn how our Chronic Kidney Disease prediction system works and the technologies powering it." />
+    <title>About – KidneyCare AI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===========================
+       NAVBAR
+  =========================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="KidneyCare AI Home">
+                <div class="logo-icon" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="11" cy="16" rx="7" ry="11" fill="#2563EB" opacity="0.85" />
+                        <ellipse cx="21" cy="16" rx="5" ry="9" fill="#3B82F6" opacity="0.7" />
+                        <ellipse cx="11" cy="16" rx="3.5" ry="6" fill="white" opacity="0.4" />
+                    </svg>
+                </div>
+                <span class="logo-text">KidneyCare <span class="logo-accent">AI</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="predict.html" class="nav-link">Predict</a></li>
+                <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+                <li>
+                    <a href="predict.html" class="nav-cta-btn" role="button">Get Started</a>
+                </li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="navLinks">
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===========================
+       PAGE HEADER
+  =========================== -->
+    <main>
+        <section class="page-header about-header" aria-labelledby="about-page-title">
+            <div class="container">
+                <span class="hero-badge">📖 Project Information</span>
+                <h1 class="page-title" id="about-page-title">About KidneyCare AI</h1>
+                <p class="page-subtitle">
+                    An intelligent screening tool for Chronic Kidney Disease built with modern machine
+                    learning and healthcare-focused design.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===========================
+         PROJECT OVERVIEW
+    =========================== -->
+        <section class="about-section" aria-label="Project overview">
+            <div class="container">
+
+                <!-- Overview card -->
+                <div class="about-overview-card fade-in">
+                    <div class="about-overview-content">
+                        <span class="section-badge">The Project</span>
+                        <h2 class="about-section-title">What is KidneyCare AI?</h2>
+                        <p class="about-para">
+                            KidneyCare AI is a clinical decision-support tool designed to assist healthcare
+                            professionals and patients in identifying the early signs of Chronic Kidney Disease (CKD).
+                            Using a curated set of nine commonly measured biomarkers, our machine learning model
+                            classifies patients as <strong>CKD positive</strong> or <strong>CKD negative</strong>
+                            with a high degree of accuracy.
+                        </p>
+                        <p class="about-para">
+                            CKD affects approximately <strong>10% of the global population</strong> and is a leading
+                            cause of kidney failure and cardiovascular disease. Early detection is critical — patients
+                            identified in stages 1–3 can often slow or halt disease progression through lifestyle
+                            changes and medication.
+                        </p>
+                        <p class="about-para">
+                            This tool was built as an academic and educational project using the
+                            <strong>UCI Chronic Kidney Disease dataset</strong>, which contains data from 400
+                            patients collected over a two-month period.
+                        </p>
+                    </div>
+                    <div class="about-overview-visual" aria-hidden="true">
+                        <div class="about-stat-block">
+                            <div class="about-stat">
+                                <span class="about-stat-num">10%</span>
+                                <span class="about-stat-label">Global CKD prevalence</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num">400</span>
+                                <span class="about-stat-label">Patients in training set</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num">95%+</span>
+                                <span class="about-stat-label">Model accuracy</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num">9</span>
+                                <span class="about-stat-label">Biomarker features</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===========================
+         TECHNOLOGY STACK
+    =========================== -->
+        <section class="tech-section" aria-labelledby="tech-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Under the Hood</span>
+                    <h2 class="section-title" id="tech-title">Technologies Used</h2>
+                    <p class="section-subtitle">
+                        A lean, modern stack chosen for reliability, speed, and healthcare-grade quality.
+                    </p>
+                </div>
+
+                <div class="tech-grid">
+
+                    <!-- Flask -->
+                    <article class="tech-card fade-in-up" tabindex="0">
+                        <div class="tech-icon-wrap"
+                            style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);" aria-hidden="true">
+                            <!-- Flask logo approximation -->
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 4h8v10l6 14a4 4 0 0 1-3.7 5.5H11.7A4 4 0 0 1 8 28.4L14 14V4z" fill="white"
+                                    opacity="0.9" />
+                                <rect x="13" y="3" width="10" height="3" rx="1" fill="#94a3b8" />
+                                <circle cx="13" cy="22" r="2" fill="#60A5FA" opacity="0.8" />
+                                <circle cx="21" cy="27" r="1.5" fill="#93C5FD" opacity="0.7" />
+                            </svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Flask</h3>
+                            <span class="tech-badge">Python Web Framework</span>
+                            <p class="tech-desc">
+                                A lightweight WSGI web framework used to serve the ML model as a RESTful API.
+                                Flask's minimalist design makes it ideal for healthcare microservices and
+                                rapid prototyping.
+                            </p>
+                            <ul class="tech-features" role="list">
+                                <li>REST API endpoint for model inference</li>
+                                <li>CORS-enabled for frontend communication</li>
+                                <li>Blueprint-based modular routing</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Machine Learning -->
+                    <article class="tech-card fade-in-up" tabindex="0">
+                        <div class="tech-icon-wrap"
+                            style="background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 100%);" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="18" cy="10" r="4" fill="white" opacity="0.9" />
+                                <circle cx="8" cy="26" r="4" fill="white" opacity="0.75" />
+                                <circle cx="28" cy="26" r="4" fill="white" opacity="0.75" />
+                                <line x1="18" y1="14" x2="8" y2="22" stroke="white" stroke-width="1.5" opacity="0.6" />
+                                <line x1="18" y1="14" x2="28" y2="22" stroke="white" stroke-width="1.5" opacity="0.6" />
+                                <line x1="8" y1="26" x2="28" y2="26" stroke="white" stroke-width="1.5" opacity="0.6" />
+                            </svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Machine Learning</h3>
+                            <span class="tech-badge">Predictive Modeling</span>
+                            <p class="tech-desc">
+                                The CKD classifier is trained using ensemble learning techniques — specifically
+                                a Random Forest classifier — to handle missing values and categorical features
+                                common in clinical datasets.
+                            </p>
+                            <ul class="tech-features" role="list">
+                                <li>Random Forest Classifier</li>
+                                <li>Cross-validation with stratified k-fold</li>
+                                <li>Feature importance ranking</li>
+                                <li>Handles class imbalance via SMOTE</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Scikit-learn -->
+                    <article class="tech-card fade-in-up" tabindex="0">
+                        <div class="tech-icon-wrap"
+                            style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);" aria-hidden="true">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="16" width="6" height="14" rx="2" fill="white" opacity="0.9" />
+                                <rect x="13" y="10" width="6" height="20" rx="2" fill="white" opacity="0.8" />
+                                <rect x="22" y="6" width="6" height="24" rx="2" fill="white" opacity="0.7" />
+                                <polyline points="7,14 16,8 25,4" stroke="white" stroke-width="1.5" opacity="0.5" />
+                            </svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Scikit-learn</h3>
+                            <span class="tech-badge">ML Library</span>
+                            <p class="tech-desc">
+                                Python's industry-standard machine learning library provides all preprocessing
+                                pipelines, model training, evaluation metrics, and serialization tools used
+                                in this project.
+                            </p>
+                            <ul class="tech-features" role="list">
+                                <li>Pipeline API for preprocessing + model</li>
+                                <li>StandardScaler & LabelEncoder</li>
+                                <li>GridSearchCV for hyperparameter tuning</li>
+                                <li>Joblib model serialization</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+         DATASET SECTION
+    =========================== -->
+        <section class="dataset-section" aria-labelledby="dataset-title">
+            <div class="container">
+                <div class="dataset-card fade-in">
+                    <div class="dataset-left">
+                        <span class="section-badge">Training Data</span>
+                        <h2 class="about-section-title" id="dataset-title">UCI CKD Dataset</h2>
+                        <p class="about-para">
+                            The model was trained on the
+                            <strong>UCI Machine Learning Repository – Chronic Kidney Disease dataset</strong>,
+                            collected at a hospital in Tamil Nadu, India over two months. The dataset includes
+                            24 features across 400 patients.
+                        </p>
+                        <p class="about-para">
+                            For this web interface, we use the 9 most predictive features based on feature
+                            importance analysis, making the tool both accurate and user-friendly.
+                        </p>
+                    </div>
+                    <div class="dataset-features" aria-label="Selected features list">
+                        <h4 class="dataset-features-title">Selected Features</h4>
+                        <div class="features-grid-small">
+                            <span class="feature-pill">Age</span>
+                            <span class="feature-pill">Blood Pressure</span>
+                            <span class="feature-pill">Specific Gravity</span>
+                            <span class="feature-pill">Albumin</span>
+                            <span class="feature-pill">Sugar</span>
+                            <span class="feature-pill">Red Blood Cells</span>
+                            <span class="feature-pill">Pus Cell</span>
+                            <span class="feature-pill">Serum Creatinine</span>
+                            <span class="feature-pill">Hemoglobin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+         HOW THE MODEL WORKS
+    =========================== -->
+        <section class="model-section" aria-labelledby="model-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Model Pipeline</span>
+                    <h2 class="section-title" id="model-title">How the Model Works</h2>
+                </div>
+                <div class="pipeline-steps">
+                    <div class="pipeline-step fade-in-up">
+                        <div class="pipeline-icon" aria-hidden="true">📊</div>
+                        <h4>Data Collection</h4>
+                        <p>Raw clinical measurements gathered from lab reports and patient records.</p>
+                    </div>
+                    <div class="pipeline-arrow" aria-hidden="true">→</div>
+                    <div class="pipeline-step fade-in-up">
+                        <div class="pipeline-icon" aria-hidden="true">🔧</div>
+                        <h4>Preprocessing</h4>
+                        <p>Missing value imputation, label encoding, and feature scaling applied.</p>
+                    </div>
+                    <div class="pipeline-arrow" aria-hidden="true">→</div>
+                    <div class="pipeline-step fade-in-up">
+                        <div class="pipeline-icon" aria-hidden="true">🤖</div>
+                        <h4>Model Training</h4>
+                        <p>Random Forest trained with 5-fold cross-validation and hyperparameter tuning.</p>
+                    </div>
+                    <div class="pipeline-arrow" aria-hidden="true">→</div>
+                    <div class="pipeline-step fade-in-up">
+                        <div class="pipeline-icon" aria-hidden="true">✅</div>
+                        <h4>Prediction</h4>
+                        <p>Inputs classified as CKD or Not CKD with confidence probability output.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================
+         DISCLAIMER
+    =========================== -->
+        <section class="disclaimer-section" aria-label="Medical disclaimer">
+            <div class="container">
+                <div class="disclaimer-card">
+                    <div class="disclaimer-icon" aria-hidden="true">⚕️</div>
+                    <div>
+                        <h3 class="disclaimer-title">Medical Disclaimer</h3>
+                        <p class="disclaimer-text">
+                            KidneyCare AI is an educational and research tool. The predictions generated
+                            by this system are <strong>not a substitute for professional medical advice,
+                                diagnosis, or treatment</strong>. Always seek the guidance of your physician
+                            or other qualified health provider with any questions you may have regarding
+                            a medical condition. Never disregard professional medical advice or delay in
+                            seeking it because of information provided by this tool.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===========================
+       FOOTER
+  =========================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" aria-label="KidneyCare AI">
+                    <div class="logo-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="11" cy="16" rx="7" ry="11" fill="#60A5FA" opacity="0.85" />
+                            <ellipse cx="21" cy="16" rx="5" ry="9" fill="#93C5FD" opacity="0.7" />
+                            <ellipse cx="11" cy="16" rx="3.5" ry="6" fill="white" opacity="0.3" />
+                        </svg>
+                    </div>
+                    <span class="logo-text" style="color:#e2e8f0;">KidneyCare <span
+                            style="color:#60A5FA;">AI</span></span>
+                </a>
+                <p class="footer-tagline">Empowering early detection of Chronic Kidney Disease through intelligent
+                    clinical analysis.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="predict.html" class="footer-link">Predict</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Contact</h4>
+                <ul class="footer-links" role="list">
+                    <li><a href="mailto:support@kidneycare.ai" class="footer-link">support@kidneycare.ai</a></li>
+                    <li><a href="tel:+18005550199" class="footer-link">+1 (800) 555-0199</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Disclaimer</h4>
+                <p class="footer-disclaimer">For informational purposes only. Always consult a qualified physician.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KidneyCare AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

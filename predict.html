@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== Meta & Title ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="KidneyCare AI – Enter your clinical measurements to receive an instant CKD risk prediction." />
+    <title>Predict – KidneyCare AI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===========================
+       NAVBAR
+  =========================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="KidneyCare AI Home">
+                <div class="logo-icon" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="11" cy="16" rx="7" ry="11" fill="#2563EB" opacity="0.85" />
+                        <ellipse cx="21" cy="16" rx="5" ry="9" fill="#3B82F6" opacity="0.7" />
+                        <ellipse cx="11" cy="16" rx="3.5" ry="6" fill="white" opacity="0.4" />
+                    </svg>
+                </div>
+                <span class="logo-text">KidneyCare <span class="logo-accent">AI</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="predict.html" class="nav-link active" aria-current="page">Predict</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li>
+                    <a href="predict.html" class="nav-cta-btn" role="button">Get Started</a>
+                </li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="navLinks">
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===========================
+       PAGE HEADER
+  =========================== -->
+    <main>
+        <section class="page-header predict-header" aria-labelledby="predict-page-title">
+            <div class="container">
+                <span class="hero-badge">🔬 Clinical Biomarker Analysis</span>
+                <h1 class="page-title" id="predict-page-title">CKD Risk Prediction</h1>
+                <p class="page-subtitle">
+                    Enter your clinical measurements below. All fields are required for an accurate assessment.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===========================
+         PREDICTION FORM
+    =========================== -->
+        <section class="predict-section" aria-label="Prediction form">
+            <div class="container predict-layout">
+
+                <!-- ===== FORM CARD ===== -->
+                <div class="predict-card fade-in">
+                    <div class="predict-card-header">
+                        <div class="predict-card-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 12h6m-3-3v6M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="predict-card-title">Patient Data Entry</h2>
+                            <p class="predict-card-subtitle">Fill in all 9 clinical parameters</p>
+                        </div>
+                    </div>
+
+                    <!-- ===== THE FORM ===== -->
+                    <form id="predictionForm" class="predict-form" novalidate aria-label="CKD prediction input form">
+
+                        <!-- Row 1 -->
+                        <div class="form-row">
+                            <!-- Age -->
+                            <div class="form-group" id="group-age">
+                                <label class="form-label" for="age">
+                                    Age <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="age" name="age" class="form-input" placeholder="e.g., 45"
+                                        min="1" max="120" step="1" autocomplete="off" required
+                                        aria-describedby="age-hint age-error" />
+                                    <span class="input-unit">years</span>
+                                </div>
+                                <span class="field-hint" id="age-hint">Range: 1 – 120</span>
+                                <span class="field-error" id="age-error" role="alert" aria-live="polite"></span>
+                            </div>
+
+                            <!-- Blood Pressure -->
+                            <div class="form-group" id="group-bp">
+                                <label class="form-label" for="bp">
+                                    Blood Pressure <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="bp" name="bp" class="form-input" placeholder="e.g., 80"
+                                        min="50" max="200" step="1" autocomplete="off" required
+                                        aria-describedby="bp-hint bp-error" />
+                                    <span class="input-unit">mmHg</span>
+                                </div>
+                                <span class="field-hint" id="bp-hint">Diastolic, range: 50 – 200</span>
+                                <span class="field-error" id="bp-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="form-row">
+                            <!-- Specific Gravity -->
+                            <div class="form-group" id="group-sg">
+                                <label class="form-label" for="sg">
+                                    Specific Gravity <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="select-wrapper">
+                                    <select id="sg" name="sg" class="form-select" required
+                                        aria-describedby="sg-hint sg-error">
+                                        <option value="" disabled selected>Select value</option>
+                                        <option value="1.005">1.005</option>
+                                        <option value="1.010">1.010</option>
+                                        <option value="1.015">1.015</option>
+                                        <option value="1.020">1.020</option>
+                                        <option value="1.025">1.025</option>
+                                    </select>
+                                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <span class="field-hint" id="sg-hint">Urine specific gravity</span>
+                                <span class="field-error" id="sg-error" role="alert" aria-live="polite"></span>
+                            </div>
+
+                            <!-- Albumin -->
+                            <div class="form-group" id="group-al">
+                                <label class="form-label" for="al">
+                                    Albumin <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="select-wrapper">
+                                    <select id="al" name="al" class="form-select" required
+                                        aria-describedby="al-hint al-error">
+                                        <option value="" disabled selected>Select level (0–5)</option>
+                                        <option value="0">0 – None</option>
+                                        <option value="1">1 – Trace</option>
+                                        <option value="2">2 – Mild</option>
+                                        <option value="3">3 – Moderate</option>
+                                        <option value="4">4 – High</option>
+                                        <option value="5">5 – Very High</option>
+                                    </select>
+                                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <span class="field-hint" id="al-hint">Urine albumin (g/dL scale)</span>
+                                <span class="field-error" id="al-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="form-row">
+                            <!-- Sugar -->
+                            <div class="form-group" id="group-su">
+                                <label class="form-label" for="su">
+                                    Sugar <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="select-wrapper">
+                                    <select id="su" name="su" class="form-select" required
+                                        aria-describedby="su-hint su-error">
+                                        <option value="" disabled selected>Select level (0–5)</option>
+                                        <option value="0">0 – None</option>
+                                        <option value="1">1 – Trace</option>
+                                        <option value="2">2 – Mild</option>
+                                        <option value="3">3 – Moderate</option>
+                                        <option value="4">4 – High</option>
+                                        <option value="5">5 – Very High</option>
+                                    </select>
+                                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <span class="field-hint" id="su-hint">Urine sugar level (0–5 scale)</span>
+                                <span class="field-error" id="su-error" role="alert" aria-live="polite"></span>
+                            </div>
+
+                            <!-- Red Blood Cells -->
+                            <div class="form-group" id="group-rbc">
+                                <label class="form-label" for="rbc">
+                                    Red Blood Cells <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="select-wrapper">
+                                    <select id="rbc" name="rbc" class="form-select" required
+                                        aria-describedby="rbc-hint rbc-error">
+                                        <option value="" disabled selected>Select status</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="abnormal">Abnormal</option>
+                                    </select>
+                                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <span class="field-hint" id="rbc-hint">Urine RBC microscopy result</span>
+                                <span class="field-error" id="rbc-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="form-row">
+                            <!-- Pus Cell -->
+                            <div class="form-group" id="group-pc">
+                                <label class="form-label" for="pc">
+                                    Pus Cell <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="select-wrapper">
+                                    <select id="pc" name="pc" class="form-select" required
+                                        aria-describedby="pc-hint pc-error">
+                                        <option value="" disabled selected>Select status</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="abnormal">Abnormal</option>
+                                    </select>
+                                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <span class="field-hint" id="pc-hint">Urine pus cell result</span>
+                                <span class="field-error" id="pc-error" role="alert" aria-live="polite"></span>
+                            </div>
+
+                            <!-- Serum Creatinine -->
+                            <div class="form-group" id="group-sc">
+                                <label class="form-label" for="sc">
+                                    Serum Creatinine <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="sc" name="sc" class="form-input" placeholder="e.g., 1.2"
+                                        min="0.1" max="50" step="0.1" autocomplete="off" required
+                                        aria-describedby="sc-hint sc-error" />
+                                    <span class="input-unit">mg/dL</span>
+                                </div>
+                                <span class="field-hint" id="sc-hint">Normal: 0.6–1.2 mg/dL</span>
+                                <span class="field-error" id="sc-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 5 -->
+                        <div class="form-row form-row--single">
+                            <!-- Hemoglobin -->
+                            <div class="form-group" id="group-hemo">
+                                <label class="form-label" for="hemo">
+                                    Hemoglobin <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="hemo" name="hemo" class="form-input"
+                                        placeholder="e.g., 14.5" min="3" max="20" step="0.1" autocomplete="off" required
+                                        aria-describedby="hemo-hint hemo-error" />
+                                    <span class="input-unit">g/dL</span>
+                                </div>
+                                <span class="field-hint" id="hemo-hint">Normal: 12–17 g/dL</span>
+                                <span class="field-error" id="hemo-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-predict" id="submitBtn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                </svg>
+                                Analyze &amp; Predict
+                            </button>
+                            <button type="reset" class="btn btn-reset" id="resetBtn" aria-label="Reset form">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <polyline points="1 4 1 10 7 10" />
+                                    <path d="M3.51 15a9 9 0 1 0 .49-5.35L1 10" />
+                                </svg>
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ===== INFO SIDEBAR ===== -->
+                <aside class="predict-sidebar fade-in-delay" aria-label="Reference information">
+                    <!-- Reference card -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-card-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="12" />
+                                <line x1="12" y1="16" x2="12.01" y2="16" />
+                            </svg>
+                            Reference Ranges
+                        </h3>
+                        <ul class="ref-list" role="list">
+                            <li class="ref-item"><span class="ref-label">Blood Pressure</span><span
+                                    class="ref-val">60–80 mmHg (normal)</span></li>
+                            <li class="ref-item"><span class="ref-label">Serum Creatinine</span><span
+                                    class="ref-val">0.6–1.2 mg/dL</span></li>
+                            <li class="ref-item"><span class="ref-label">Hemoglobin (M)</span><span
+                                    class="ref-val">13.5–17.5 g/dL</span></li>
+                            <li class="ref-item"><span class="ref-label">Hemoglobin (F)</span><span
+                                    class="ref-val">12.0–15.5 g/dL</span></li>
+                            <li class="ref-item"><span class="ref-label">Albumin (urine)</span><span
+                                    class="ref-val">&lt;30 mg/day normal</span></li>
+                            <li class="ref-item"><span class="ref-label">Specific Gravity</span><span
+                                    class="ref-val">1.005–1.030</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Tip card -->
+                    <div class="sidebar-card sidebar-card--tip">
+                        <h3 class="sidebar-card-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                            Quick Tips
+                        </h3>
+                        <ul class="tip-list" role="list">
+                            <li>Use recent lab report values for accuracy.</li>
+                            <li>Ensure blood pressure is diastolic reading.</li>
+                            <li>Hemoglobin should be from a CBC report.</li>
+                            <li>This tool is for screening only — consult a doctor for diagnosis.</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ===========================
+         RESULT DISPLAY AREA
+    =========================== -->
+        <section class="result-section" id="resultSection" aria-live="polite" aria-label="Prediction result" hidden>
+            <div class="container">
+                <div class="result-card" id="resultCard">
+                    <!-- Populated dynamically by script.js -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===========================
+       FOOTER
+  =========================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" aria-label="KidneyCare AI">
+                    <div class="logo-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="11" cy="16" rx="7" ry="11" fill="#60A5FA" opacity="0.85" />
+                            <ellipse cx="21" cy="16" rx="5" ry="9" fill="#93C5FD" opacity="0.7" />
+                            <ellipse cx="11" cy="16" rx="3.5" ry="6" fill="white" opacity="0.3" />
+                        </svg>
+                    </div>
+                    <span class="logo-text" style="color:#e2e8f0;">KidneyCare <span
+                            style="color:#60A5FA;">AI</span></span>
+                </a>
+                <p class="footer-tagline">Empowering early detection of Chronic Kidney Disease through intelligent
+                    clinical analysis.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links" role="list">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="predict.html" class="footer-link">Predict</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Contact</h4>
+                <ul class="footer-links" role="list">
+                    <li><a href="mailto:support@kidneycare.ai" class="footer-link">support@kidneycare.ai</a></li>
+                    <li><a href="tel:+18005550199" class="footer-link">+1 (800) 555-0199</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Disclaimer</h4>
+                <p class="footer-disclaimer">For informational purposes only. Always consult a qualified physician.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KidneyCare AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

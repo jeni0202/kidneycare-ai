@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== Meta & Title ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KidneyCare AI – Chronic Kidney Disease Prediction System powered by machine learning for early detection and better outcomes." />
+  <title>KidneyCare AI – CKD Prediction System</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===========================
+       NAVBAR
+  =========================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo" aria-label="KidneyCare AI Home">
+        <div class="logo-icon" aria-hidden="true">
+          <!-- Simple kidney-shaped SVG icon -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="11" cy="16" rx="7" ry="11" fill="#2563EB" opacity="0.85"/>
+            <ellipse cx="21" cy="16" rx="5" ry="9" fill="#3B82F6" opacity="0.7"/>
+            <ellipse cx="11" cy="16" rx="3.5" ry="6" fill="white" opacity="0.4"/>
+          </svg>
+        </div>
+        <span class="logo-text">KidneyCare <span class="logo-accent">AI</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li><a href="predict.html" class="nav-link">Predict</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li>
+          <a href="predict.html" class="nav-cta-btn" role="button">Get Started</a>
+        </li>
+      </ul>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===========================
+       HERO SECTION
+  =========================== -->
+  <main>
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <!-- Decorative background blobs -->
+      <div class="hero-blob blob-1" aria-hidden="true"></div>
+      <div class="hero-blob blob-2" aria-hidden="true"></div>
+
+      <div class="hero-content fade-in">
+        <span class="hero-badge">🩺 AI-Powered Medical Analysis</span>
+        <h1 class="hero-title" id="hero-title">
+          Chronic Kidney Disease<br />
+          <span class="gradient-text">Early Prediction</span>
+        </h1>
+        <p class="hero-subtitle">
+          Using advanced machine learning algorithms to analyze clinical parameters
+          and deliver rapid, accurate CKD risk assessments — empowering patients
+          and healthcare professionals with actionable insights.
+        </p>
+        <div class="hero-actions">
+          <a href="predict.html" class="btn btn-primary" role="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Start Prediction
+          </a>
+          <a href="about.html" class="btn btn-outline" role="button">Learn More</a>
+        </div>
+        <!-- Stats row -->
+        <div class="hero-stats" aria-label="Platform statistics">
+          <div class="stat-item">
+            <strong>95%+</strong><span>Accuracy</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <strong>&lt;2s</strong><span>Analysis Time</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <strong>9</strong><span>Clinical Markers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Illustration -->
+      <div class="hero-visual fade-in-delay" aria-hidden="true">
+        <div class="hero-card-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dot red"></div>
+            <div class="mockup-dot yellow"></div>
+            <div class="mockup-dot green"></div>
+            <span class="mockup-title">CKD Analysis Report</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-row">
+              <span class="mockup-label">Serum Creatinine</span>
+              <span class="mockup-value good">1.2 mg/dL ✓</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Hemoglobin</span>
+              <span class="mockup-value good">14.5 g/dL ✓</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Blood Pressure</span>
+              <span class="mockup-value warn">82 mmHg ⚠</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Albumin</span>
+              <span class="mockup-value good">0 ✓</span>
+            </div>
+            <div class="mockup-progress-wrap">
+              <span class="mockup-label">Risk Level</span>
+              <div class="mockup-progress-bar">
+                <div class="mockup-progress-fill" style="width: 28%"></div>
+              </div>
+              <span class="mockup-pct">Low Risk – 28%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         FEATURES SECTION
+    =========================== -->
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Why KidneyCare AI?</span>
+          <h2 class="section-title" id="features-title">Built for Clarity &amp; Confidence</h2>
+          <p class="section-subtitle">
+            Three pillars that make our platform the reliable choice for CKD risk screening.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <!-- Card 1 -->
+          <article class="feature-card fade-in-up" tabindex="0">
+            <div class="feature-icon-wrap icon-blue" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 class="feature-title">AI Powered</h3>
+            <p class="feature-desc">
+              Trained on clinical datasets using Scikit-learn's ensemble models, our engine
+              identifies subtle patterns across nine biomarkers to surface meaningful risk signals.
+            </p>
+            <span class="feature-tag">Machine Learning</span>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card feature-card--highlight fade-in-up" tabindex="0">
+            <div class="feature-icon-wrap icon-white" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 class="feature-title feature-title--white">Fast Results</h3>
+            <p class="feature-desc feature-desc--white">
+              Receive a comprehensive risk assessment in under two seconds. No waiting rooms,
+              no lengthy lab turnarounds — just instant, actionable information.
+            </p>
+            <span class="feature-tag feature-tag--light">Real-time Analysis</span>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card fade-in-up" tabindex="0">
+            <div class="feature-icon-wrap icon-blue" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="feature-title">Secure Data</h3>
+            <p class="feature-desc">
+              All analysis is performed client-side. No personal health data is ever transmitted
+              or stored, keeping your information completely private and secure.
+            </p>
+            <span class="feature-tag">Privacy First</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         HOW IT WORKS SECTION
+    =========================== -->
+    <section class="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Simple Process</span>
+          <h2 class="section-title" id="how-title">How It Works</h2>
+        </div>
+        <div class="steps-row">
+          <div class="step fade-in-up">
+            <div class="step-number" aria-hidden="true">01</div>
+            <h4 class="step-title">Enter Details</h4>
+            <p class="step-desc">Fill in your clinical measurements on the Predict page.</p>
+          </div>
+          <div class="step-arrow" aria-hidden="true">→</div>
+          <div class="step fade-in-up">
+            <div class="step-number" aria-hidden="true">02</div>
+            <h4 class="step-title">AI Analysis</h4>
+            <p class="step-desc">Our ML model processes all nine biomarker inputs instantly.</p>
+          </div>
+          <div class="step-arrow" aria-hidden="true">→</div>
+          <div class="step fade-in-up">
+            <div class="step-number" aria-hidden="true">03</div>
+            <h4 class="step-title">View Results</h4>
+            <p class="step-desc">Receive a clear risk classification with a confidence score.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         CTA BANNER
+    =========================== -->
+    <section class="cta-banner" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <h2 class="cta-title" id="cta-title">Ready to assess your kidney health?</h2>
+          <p class="cta-sub">It takes less than a minute and could make a real difference.</p>
+        </div>
+        <a href="predict.html" class="btn btn-white" role="button">Start Free Assessment</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===========================
+       FOOTER
+  =========================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="KidneyCare AI">
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="11" cy="16" rx="7" ry="11" fill="#60A5FA" opacity="0.85"/>
+              <ellipse cx="21" cy="16" rx="5" ry="9" fill="#93C5FD" opacity="0.7"/>
+              <ellipse cx="11" cy="16" rx="3.5" ry="6" fill="white" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="logo-text" style="color:#e2e8f0;">KidneyCare <span style="color:#60A5FA;">AI</span></span>
+        </a>
+        <p class="footer-tagline">Empowering early detection of Chronic Kidney Disease through intelligent clinical analysis.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="predict.html" class="footer-link">Predict</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="mailto:support@kidneycare.ai" class="footer-link">support@kidneycare.ai</a></li>
+          <li><a href="tel:+18005550199" class="footer-link">+1 (800) 555-0199</a></li>
+          <li><span class="footer-address">123 Health Plaza, Medical District</span></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Disclaimer</h4>
+        <p class="footer-disclaimer">
+          This tool is intended for informational purposes only and does not replace professional medical advice. Always consult a qualified physician for diagnosis and treatment.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 KidneyCare AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
